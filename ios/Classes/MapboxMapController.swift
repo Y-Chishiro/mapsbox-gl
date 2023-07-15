@@ -110,6 +110,8 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
             pan.delegate = self
             mapView.addGestureRecognizer(pan)
         }
+
+        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
     }
 
     func removeAllForController(controller: MGLAnnotationController, ids: [String]) {
